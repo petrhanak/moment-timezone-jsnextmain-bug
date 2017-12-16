@@ -24,4 +24,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
   ],
+  resolve: {
+    mainFields: [
+      'browser',
+      'jsnext:main', // removing this line fixes moment-timezone but also breaks tree-shaking
+      'main',
+    ],
+  }
 }
